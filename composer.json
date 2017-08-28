@@ -1,0 +1,27 @@
+{
+    "name": "power-lan/train-pictures",
+    "type": "library",
+    "description": "Collection of various train pictures",
+    "keywords": [
+        "image",
+        "train"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Community",
+            "homepage": "https://github.com/Power-Lan/train-pictures/blob/master/CONTRIBUTORS.md"
+        }
+    ],
+    "require": {
+        "php" : "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "pl\\trains\\": "src/"
+        }
+    }
+}
