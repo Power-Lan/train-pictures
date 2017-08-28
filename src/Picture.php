@@ -15,7 +15,7 @@ class Picture
             while (($file = readdir($dh)) !== false) {
                 if (substr($file, -4) === '.jpg') {
                     $filename = substr($file, 0, -4);
-                    $out[$filename] = realpath(__DIR__ . '/../img/' . $file);
+                    $out[$filename] = __DIR__ . '/../img/' . $file;
                 }
             }
 
