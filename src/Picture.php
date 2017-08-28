@@ -11,10 +11,15 @@ class Picture
     {
         $out = array();
 
-        $files = glob(__DIR__ . '/../img/*.jpg');
-        foreach($files as $file) {
-            $name = basename($file, '.jpg');
-            $out[$name] = realpath($file);
+        if ($dh = opendir(__DIR__ . '/../img/')) {
+            while (($file = readdir($dh)) !== false) {
+                if (substr($file, -4) === '.jpg') {
+                    $filename = substr($file, 0, -4);
+                    $out[$filename] = realpath(__DIR__ . '/../img/' . $file);
+                }
+            }
+
+            closedir($dh);
         }
 
         return $out;
